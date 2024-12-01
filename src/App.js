@@ -1,22 +1,14 @@
-import logo from './logo.svg';
-import './App.css';
+import './App.css'; // Import custom styles
+import React from 'react';
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
+        <h1>Welcome to My React App</h1>
         <p>
-          Edit <code>src/App.js</code> and save to reload.
+          This is a basic template for a React application.
         </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
       </header>
     </div>
   );
