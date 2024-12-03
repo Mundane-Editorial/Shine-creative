@@ -1,16 +1,13 @@
 import './App.css'; // Import custom styles
 import React from 'react';
+import Navbar from './Components/Navbar';
+
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <h1>Welcome to My React App</h1>
-        <p>
-          This is a basic template for a React application.
-        </p>
-      </header>
-    </div>
+    <>
+      <Navbar />
+    </>
   );
 }
 
