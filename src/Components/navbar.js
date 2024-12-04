@@ -2,8 +2,7 @@ import React, { useState } from 'react';
 import MenuIcon from '@mui/icons-material/Menu';
 import CloseIcon from '@mui/icons-material/Close';  // Import Close icon
 import { AppBar, Toolbar, IconButton, Typography, Box, Button, Drawer, List, ListItem, ListItemText } from '@mui/material';
-import PaletteIcon from '@mui/icons-material/Palette';
-
+// import PaletteIcon from '@mui/icons-material/Palette';
 const Navbar = () => {
   const [open, setOpen] = useState(false);  // State to handle drawer visibility
 
@@ -14,26 +13,38 @@ const Navbar = () => {
 
   return (
     <>
-      <AppBar position="relative" color="transparent" elevation={0}>
+      <AppBar position="absolute" color="none" elevation={0}>
         <Toolbar sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
           {/* Logo and Title */}
-          <Box sx={{ display: 'flex', alignItems: 'center' }}>
-            <IconButton size="large" edge="start" color="inherit" aria-label="logo">
-              <PaletteIcon />
-            </IconButton>
-            <Typography variant="h6" sx={{ fontWeight: 'bold', ml: 1 }}>
-              Shine Creative
-            </Typography>
+          <Box sx={{ display: 'flex', alignItems: 'start', color: 'white' }}>
+            <Box
+              component="png"
+              src="src\Assets\logo.png" // Path to the original logo
+              alt="Logo"
+              sx={{
+                width: 40,
+                height: 40,
+                borderRadius: '50%',
+                filter: 'invert(1) grayscale(1)', // Makes dark parts white
+              }}
+            />
+              <Typography variant="h6" sx={{ fontWeight: 'bold', fontSize: '1.5rem'}}>
+                Shine Creative
+              </Typography>
           </Box>
+
+
+
 
           {/* Desktop Navigation */}
           <Box sx={{ display: { xs: 'none', md: 'flex' }, gap: 2 }}>
-            <Button color="inherit">Home</Button>
-            <Button color="inherit">About Us</Button>
-            <Button color="inherit">Services</Button>
-            <Button color="inherit">Products</Button>
-            <Button color="inherit">Contact Us</Button>
+            <Button color="inherit" variant="text" sx={{ color: 'white', fontWeight: '650' }}>Home</Button>
+            <Button color="inherit" variant="text" sx={{ color: 'white', fontWeight: '650' }}>About Us</Button>
+            <Button color="inherit" variant="text" sx={{ color: 'white', fontWeight: '650' }}>Services</Button>
+            <Button color="inherit" variant="text" sx={{ color: 'white', fontWeight: '650' }}>Products</Button>
+            <Button color="inherit" variant="text" sx={{ color: 'white', fontWeight: '650' }}>Contact Us</Button>
           </Box>
+
 
           {/* Mobile Menu Icon with Circular Button */}
           <Box sx={{ display: { xs: 'flex', md: 'none' } }}>
@@ -43,7 +54,7 @@ const Navbar = () => {
               edge="end"
               onClick={toggleDrawer}
             >
-              <MenuIcon />
+              <MenuIcon sx={{ color: 'white' }} /> {/* Change icon color here */}
             </IconButton>
           </Box>
         </Toolbar>
@@ -63,35 +74,34 @@ const Navbar = () => {
         }}
       >
         <Box sx={{ width: 250 }} role="presentation" onClick={toggleDrawer} onKeyDown={toggleDrawer}>
-  {/* Close Button and Horizontal Line Container */}
-  <Box sx={{ display: 'flex', flexDirection: 'row', alignItems: 'flex-start', justifyContent: 'space-between', p: 1 , mr:2 }}>
+          {/* Close Button and Horizontal Line Container */}
+          <Box sx={{ display: 'flex', flexDirection: 'row', alignItems: 'flex-start', justifyContent: 'space-between', p: 1, mr: 2 }}>
 
-    {/* Menu Items (on the second row) */}
-    <List sx={{ padding: 0, marginTop: 0 }}>
-      <ListItem button sx={{ paddingY: 0.5 }}>
-        <ListItemText primary="Home" />
-      </ListItem>
-      <ListItem button sx={{ paddingY: 0.5 }}>
-        <ListItemText primary="About Us" />
-      </ListItem>
-      <ListItem button sx={{ paddingY: 0.5 }}>
-        <ListItemText primary="Services" />
-      </ListItem>
-      <ListItem button sx={{ paddingY: 0.5 }}>
-        <ListItemText primary="Products" />
-      </ListItem>
-      <ListItem button sx={{ paddingY: 0.5 }}>
-        <ListItemText primary="Contact Us" />
-      </ListItem>
-    </List>
-    
-    {/* Close Button (on the first row) */}
-    <IconButton edge="end" color="inherit" onClick={toggleDrawer}>
-      <CloseIcon />
-    </IconButton>
-  </Box>
-</Box>
+            {/* Menu Items (on the second row) */}
+            <List sx={{ padding: 0, marginTop: 0 }}>
+              <ListItem button sx={{ paddingY: 0.5 }}>
+                <ListItemText primary="Home" sx={{ color: 'black' }} /> {/* Change color here */}
+              </ListItem>
+              <ListItem button sx={{ paddingY: 0.5 }}>
+                <ListItemText primary="About Us" sx={{ color: 'black' }} /> {/* Change color here */}
+              </ListItem>
+              <ListItem button sx={{ paddingY: 0.5 }}>
+                <ListItemText primary="Services" sx={{ color: 'black' }} /> {/* Change color here */}
+              </ListItem>
+              <ListItem button sx={{ paddingY: 0.5 }}>
+                <ListItemText primary="Products" sx={{ color: 'black' }} /> {/* Change color here */}
+              </ListItem>
+              <ListItem button sx={{ paddingY: 0.5 }}>
+                <ListItemText primary="Contact Us" sx={{ color: 'black' }} /> {/* Change color here */}
+              </ListItem>
+            </List>
 
+            {/* Close Button (on the first row) */}
+            <IconButton edge="end" color="inherit" onClick={toggleDrawer}>
+              <CloseIcon sx={{ color: 'black' }} /> {/* Change color here */}
+            </IconButton>
+          </Box>
+        </Box>
       </Drawer>
     </>
   );

@@ -10,7 +10,7 @@ import AboutUs from './Pages/Aboutus';
 function App() {
   return (
     <Router>
-      <Navbar />
+      <Navbar z-index={5} />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/About-us" element={<AboutUs />} />

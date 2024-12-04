@@ -22,7 +22,10 @@
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
+  margin-left: 10%;  /* Add left margin */
+  margin-right: 10%; /* Add right margin */
 }
+
 
 .App-link {
   color: #61dafb;
