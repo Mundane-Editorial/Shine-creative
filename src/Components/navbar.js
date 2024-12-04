@@ -18,8 +18,8 @@ const Navbar = () => {
           {/* Logo and Title */}
           <Box sx={{ display: 'flex', alignItems: 'start', color: 'white' }}>
             <Box
-              component="png"
-              src="src\Assets\logo.png" // Path to the original logo
+              component="img"
+              src="https://images.unsplash.com/photo-1597645587822-e99fa5d45d25" // Path to the original logo   
               alt="Logo"
               sx={{
                 width: 40,
