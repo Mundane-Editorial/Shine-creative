@@ -17,7 +17,7 @@ const Home = () => {
           flexDirection: 'column',
           justifyContent: 'end',
           alignItems: 'start',
-          padding: '5%',
+          padding: '3.5%',
           paddingBottom: '10%',
         }}
       >
