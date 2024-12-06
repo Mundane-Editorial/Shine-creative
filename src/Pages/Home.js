@@ -18,11 +18,10 @@ const Home = () => {
     speed: 500,
     slidesToShow: 1,
     slidesToScroll: 1,
-    centerMode: true, // Enable centering
-    centerPadding: '30px', // Adjust space between cards
-    // You can also tweak other settings like `autoplay`, `autoplaySpeed`, etc.
+    centerMode: true,// Enable centering
+    // centerPadding: '20px', // Adjust space between cards
     autoplay: true,
-    autoplaySpeed: 500,
+    autoplaySpeed: 3000,
   };
 
   const item = [
@@ -121,7 +120,6 @@ const Home = () => {
             <Paper
               key={item.img}
               variant="outlined"
-              elevation={3}
               sx={{
                 height: '60vh',
                 display: 'flex',
@@ -130,17 +128,16 @@ const Home = () => {
                 flexDirection: 'column',
                 borderRadius: '15px',
                 boxShadow: '0px 0px 60px 2px rgba(128, 128, 128, 0.5)',
-                backgroundColor: 'none',
-                margin: '0 1rem',
+                margin: '0rem 1rem',
                 border: 'none',
-                padding: '10px',
+                padding: '7px',
               }}
             >
               <img
-                srcSet={`${item.img}?w=164&h=164&fit=crop&auto=format&dpr=2 2x`}
-                src={`${item.img}?w=164&h=164&fit=crop&auto=format`}
+                srcSet={`${item.img}?w=610&h=810&fit=crop&auto=format&dpr=2 2x`}
+                src={`${item.img}?w=610&h=810&fit=crop&auto=format`}
                 alt={item.title}
-                loading="lazy"
+                loading="eager"
                 style={{
                   objectFit: 'cover', // Ensures image covers entire area of Paper
                   width: '100%', // Makes image stretch to full width of Paper
@@ -152,6 +149,15 @@ const Home = () => {
             </Paper>
           ))}
         </Slider>
+        {/* Global Style for .slick-list */}
+        <style jsx global>{`
+        .slick-list {
+          // overflow: hidden;
+          color: white;
+          background-color: 'none';
+          margin: '0rem 1rem';
+        }
+      `}</style>
       </Box>
     </Box>
   );
